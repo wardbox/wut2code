@@ -21,9 +21,9 @@ def index():
     response = openai.Completion.create(
         engine="text-davinci-002",
         prompt=f"""
-        Give me a single idea for a basic web app involving {topic.choices[0].text}. It should be at least 3 sentences
-        long. It should be easy to read. It should start with the phrase 'You should make' or 'Why don't you make'. The
-        completion must include some emojis.""",
+        Give me an idea for a basic web app involving {topic.choices[0].text}. It should be at least 3
+        sentences long. It should be easy to read. It should start with the phrase 'You should make' or 'Why don't you
+        make'. The completion must include some emojis.""",
         temperature=0.9,
         max_tokens=200
     )
