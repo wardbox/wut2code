@@ -13,7 +13,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 limiter = Limiter(
     app,
     key_func=get_remote_address,
-    default_limits=["10 per day", "5 per hour", "3 per minute"]
+    default_limits=["10 per day", "5 per hour", "20 per minute"]
 )
 
 button_texts = [
@@ -29,7 +29,8 @@ def index():
     topic = openai.Completion.create(
         engine="text-davinci-002",
         prompt="Give me a topic that many people will be familiar with.",
-        temperature=0.9
+        temperature=0.9,
+        max_tokens=250
     )
 
     filtered_topic = openai.Completion.create(
