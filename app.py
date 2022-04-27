@@ -13,7 +13,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 limiter = Limiter(
     app,
     key_func=get_remote_address,
-    default_limits=["10 per day", "5 per hour", "20 per minute"]
+    default_limits=["20 per minute"]
 )
 
 button_texts = [
