@@ -11,14 +11,11 @@
 </head>
 
 <body>
-    <div class="container">
+
+    <div class="container text-center">
         <div class="row">
             <div class="col">
-            </div>
-            <div class="col">
                 <h1 class="text-center display-1">wut2code</h1>
-            </div>
-            <div class="col">
             </div>
         </div>
     </div>
@@ -28,8 +25,21 @@
             </div>
             <div class="col">
                 {% if response %}
-                <p class="h3 text-center">{{ response }}</p>
+                <p>{{ response }}</p>
                 {% endif %}
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+                <a href="{{ url_for('index') }}">
+                    <button type="button" class="btn btn-outline-danger">{{ button_text }}</button>
+                </a>
             </div>
             <div class="col">
             </div>
