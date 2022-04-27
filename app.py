@@ -1,9 +1,11 @@
-from flask import Flask
-from flask import render_template
+import os
 
+import openai
+
+from flask import Flask, redirect, render_template, request, url_for
 app = Flask(__name__)
 
 
 @app.route("/")
-def hello_world():
+def index():
     return render_template('index.html', response="hello!")
