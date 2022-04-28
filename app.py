@@ -29,8 +29,7 @@ def index():
     topic = openai.Completion.create(
         engine="text-davinci-002",
         prompt="Give me a topic that many people will be familiar with.",
-        temperature=0.9,
-        max_tokens=250
+        temperature=0.9
     )
 
     filtered_topic = openai.Completion.create(
