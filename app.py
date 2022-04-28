@@ -79,16 +79,16 @@ def index():
     # this should be set as unsafe
     if output_label not in ["0", "1", "2"]:
         output_label = "2"
-        return redirect(url_for('index.html'), try_again=True)
+        return redirect(url_for('index.html'))
 
     response = openai.Completion.create(
         engine="text-davinci-002",
         prompt=f"""
-        Give me an idea for a basic web app involving {topic.choices[0].text}. The completion should be at least 3
+        Give me a single idea for a basic web app involving {topic.choices[0].text}. The completion should be at least 3
         sentences long. The completion should be easy to read. The completion should start with the phrase 'You should
         make' or 'Why don't you make'. The completion must include some emojis.""",
         temperature=0.9,
-        max_tokens=250
+        max_tokens=150
     )
 
     filtered_response = openai.Completion.create(
@@ -137,7 +137,7 @@ def index():
     # this should be set as unsafe
     if output_label not in ["0", "1", "2"]:
         output_label = "2"
-        return redirect(url_for('index.html'), try_again=True)
+        return redirect(url_for('index.html'))
 
     else:
         return render_template(
