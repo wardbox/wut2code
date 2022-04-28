@@ -27,7 +27,7 @@ button_texts = [
 @app.route("/")
 def index():
     topic = openai.Completion.create(
-        engine="text-curie-001",
+        engine="text-davinci-002",
         prompt="Give me a topic that many people will be familiar with.",
         temperature=0.9,
         max_tokens=250
