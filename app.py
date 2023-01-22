@@ -27,7 +27,7 @@ button_texts = [
 @app.route("/")
 def index():
     topic = openai.Completion.create(
-        engine="text-davinci-002",
+        engine="text-davinci-003",
         prompt="Give me a topic that many people will be familiar with.",
         temperature=0.9
     )
@@ -81,11 +81,11 @@ def index():
         return redirect(url_for('index.html'))
 
     response = openai.Completion.create(
-        engine="text-davinci-002",
+        engine="text-davinci-003",
         prompt=f"""
-        Give me a single idea for a basic web app involving {topic.choices[0].text}. The completion should be at least 3
-        sentences long. The completion should be easy to read. The completion should start with the phrase 'You should
-        make' or 'Why don't you make'. The completion must include some emojis.""",
+        Give me a single idea for a basic web app involving {topic.choices[0].text}. The idea should be at least 3
+        sentences long. The idea should be easy to read. The idea should start with the phrase 'You should
+        make' or 'Why don't you make'. The idea must include some emojis.""",
         temperature=0.9,
         max_tokens=150
     )
